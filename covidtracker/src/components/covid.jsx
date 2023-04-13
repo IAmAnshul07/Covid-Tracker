@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../components/covid.css';
 import ActiveCases from './active';
 import LastUpdated from './lastUpdated';
@@ -6,21 +6,21 @@ import TotalDeath from '../death';
 import TotalConfirmed from './confirmed';
 import TotalRecovered from './recovered';
 
-
 const Covid = () => {
-
+    const [data, setData] = useState([]);
     const getCovidData = async () => {
         try {
             const res = await fetch('https://data.covid19india.org/data.json');
             const actualData = await res.json();
-            console.log(actualData.statewise[0])
+            console.log(actualData.statewise[0]);
+            setData(actualData.statewise[0]);
         } catch (err) {
             console.log(err);
         }
     }
 
     useEffect(() => {
-        // getCovidData();
+        getCovidData();
     }, [])
     return (
         <>
