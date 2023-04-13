@@ -1,5 +1,10 @@
 import React, { useEffect } from 'react'
 import '../components/covid.css';
+import ActiveCases from './active';
+import LastUpdated from './lastUpdated';
+import TotalDeath from '../death';
+import TotalConfirmed from './confirmed';
+import TotalRecovered from './recovered';
 
 
 const Covid = () => {
@@ -21,71 +26,40 @@ const Covid = () => {
         <>
             <h1 className='mainHeading'>🔴LIVE COVID TRACKER</h1>
             <div className="container">
-            <section>
-                <div className="card">
-                    <div className="cardHeading">
-                        <div className="cardDetails">
-                            <p className="cardName"><span className='spanStyling'>OUR</span>COUNTRY</p>
-                            <p className="cardTotal">INDIA</p>
+                <div className='subContainerOne'>
+                    <div>
+                        <div className="card">
+                            <div className="cardHeading">
+                                <div className="cardDetails">
+                                    <p className="cardName"><span className='spanStyling'>OUR</span>COUNTRY</p>
+                                    <p className="cardTotal">INDIA</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
 
-            <section>
-                <div className="card">
-                    <div className="cardHeading">
-                        <div className="cardDetails">
-                            <p className="cardName"><span className='spanStyling'>Total </span>RECOVERED</p>
-                            <p className="cardTotal">INDIA</p>
-                        </div>
+                    <div>
+                        <TotalRecovered />
                     </div>
-                </div>
-            </section>
 
-            <section>
-                <div className="card">
-                    <div className="cardHeading">
-                        <div className="cardDetails">
-                            <p className="cardName"><span className='spanStyling'>Total </span>CONFIRMED</p>
-                            <p className="cardTotal">INDIA</p>
-                        </div>
+                    <div>
+                        <TotalConfirmed />
                     </div>
-                </div>
-            </section>
 
-            <section>
-                <div className="card">
-                    <div className="cardHeading">
-                        <div className="cardDetails">
-                            <p className="cardName"><span className='spanStyling'>Total </span>DEATH</p>
-                            <p className="cardTotal">INDIA</p>
-                        </div>
-                    </div>
                 </div>
-            </section>
+                <div className='subContainerTwo'>
+                    <div>
+                        <TotalDeath />
+                    </div>
 
-            <section>
-                <div className="card">
-                    <div className="cardHeading">
-                        <div className="cardDetails">
-                            <p className="cardName"><span className='spanStyling'>Total </span>ACTIVE</p>
-                            <p className="cardTotal">INDIA</p>
-                        </div>
+                    <div>
+                        <ActiveCases />
                     </div>
-                </div>
-            </section>
 
-            <section>
-                <div className="card">
-                    <div className="cardHeading">
-                        <div className="cardDetails">
-                            <p className="cardName"><span className='spanStyling'>Last </span>UPDATED</p>
-                            <p className="cardTotal">INDIA</p>
-                        </div>
+                    <div>
+                        <LastUpdated />
                     </div>
                 </div>
-            </section>
 
             </div>
         </>

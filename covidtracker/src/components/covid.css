@@ -3,9 +3,16 @@
     margin-left: 5px;
     color: black;
 }
-.container{
+
+.subContainerOne{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.subContainerTwo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 .card{
     font-family: 'Archivo', sans-serif;
